@@ -9,12 +9,10 @@ const config: Config = {
   ],
   theme: {
     fontFamily: {
-      // Reference the CSS variable that Next.js font sets up
       sans: ["var(--font-jetbrains-mono)", "monospace"],
       mono: ["var(--font-jetbrains-mono)", "monospace"],
     },
     colors: {
-      // Accent colors
       accent: {
         600: "#3f92ff",
         700: "#016fff",
@@ -23,7 +21,6 @@ const config: Config = {
         1000: "#203d85",
         1200: "#1b264f",
       },
-      // Primary colors
       primary: {
         "000": "#ffffff",
         "050": "#fdfcfc",
@@ -41,7 +38,6 @@ const config: Config = {
       current: "currentColor",
       white: "#ffffff",
       black: "#000000",
-      // Positive colors
       positive: {
         600: "#77ce7b",
         700: "#45bf55",
@@ -49,7 +45,6 @@ const config: Config = {
         900: "#337b3a",
         1000: "#2d6631",
       },
-      // Destructive colors
       destructive: {
         600: "#fa7356",
         700: "#ef4129",
@@ -60,8 +55,9 @@ const config: Config = {
     },
     borderRadius: {
       none: "0",
-      "2xs": "8px",
-      xs: "10px",
+      "3xs": "8px",
+      "2xs": "10px",
+      xs: "16px",
       sm: "24px",
       md: "32px",
       lg: "40px",
@@ -104,7 +100,6 @@ const config: Config = {
     },
   },
   plugins: [
-    // Add a base plugin to ensure font is applied globally
     plugin(function ({ addBase }) {
       addBase({
         "html, body": {
@@ -112,8 +107,6 @@ const config: Config = {
         },
       });
     }),
-
-    // Component definitions
     plugin(function ({ addComponents, theme }) {
       addComponents({
         ".body-xs": {
@@ -134,6 +127,7 @@ const config: Config = {
         ".button-md": {
           fontSize: theme("fontSize.md"),
           fontWeight: theme("fontWeight.bold"),
+          lineHeight: "auto",
         },
         ".shadow-card": {
           boxShadow:
